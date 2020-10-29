@@ -1,0 +1,35 @@
+﻿@model ListaAmigosClassLibrary.Models.Table
+
+@{
+    ViewData["Title"] = "SalvarInformacao";
+    var table = ViewData["Message"] as Table;
+}
+
+<h1>SalvarInformacao</h1>
+
+<p>@ViewBag.Dados</p>
+
+<h4>Deseja Realmente Salvar a Informacao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SalvarInformacao">
+            <table>
+                @table.Nome
+                <br>
+                @table.Sobrenome
+                <br>
+                @table.Email
+                <br>
+                @table.DataNascimento
+            </table>
+            <input type="checkbox" name="isPersistent" value="true" />? isPersistent
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </form>
+    </div>
+    </div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
